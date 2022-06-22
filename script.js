@@ -72,7 +72,11 @@ let score2 = document.querySelector(".score2")
 
 // AI switch variable and it's event listener
 let switch1 = document.querySelector("#switch1")
-switch1.addEventListener("click", ()=>{pvp = false})
+
+switch1.addEventListener("click", (event)=>{
+    if (event.target.checked) {pvp = false}
+    else {pvp = true}
+})
 
 // Filtered array with free board spaces
 let filteredArr = []

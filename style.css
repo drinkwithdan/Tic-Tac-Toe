@@ -12,10 +12,6 @@ body {
     font-family: helvetica, sans-serif;
 }
 
-header {
-
-}
-
 h1 {
     font-size: 60px;
     font-family: 'Amatic SC', sans-serif;
@@ -34,8 +30,8 @@ h4 {
 }
 
 main {
-    width: 500px;
-    height: 500px;
+    width: 600px;
+    height: 600px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -49,10 +45,17 @@ main {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
-    background-image: url(./img/grid.png);
+    /* background-image: url(./img/grid.png); */
     background-size: cover;
-    border-radius: 0;
-    gap: 8px;
+    outline-width: 5px;
+    outline-style: solid;
+    outline-color: lightgrey;
+    outline-offset: -5px;
+    /* gap: 8px; */
+}
+
+#cell {
+    border: 3px solid black;
 }
 
 .top-panel {
