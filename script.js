@@ -30,6 +30,9 @@ const player2 = new Player ("Player 2")
 // Creates variable to track if game is still running
 let matchOver = false;
 
+// Creates variable to track if PVP or PVE
+let pvp = true;
+
 // Variable to keep track of rounds
 const roundNumber = 0
 
@@ -45,7 +48,7 @@ let boardArr = [
 ]
 
 // Create array with each cell from .board class
-const cellsArr = document.querySelectorAll(".cell")
+const cellsArr = document.querySelectorAll("#cell")
 
 // Add listener to each individual cell
 cellsArr.forEach((cell, index) => {
@@ -54,10 +57,10 @@ cellsArr.forEach((cell, index) => {
     })
 })
 
-// Creates variable to track Restart button in HTML
+// Creates variable to track button elements in HTML
 restartButton = document.querySelector(".restart-button")
 
-// Adds listener for restartButton
+// Adds listeners for buttons
 restartButton.addEventListener("click", () => {restartGame()})
 
 // Creates variable to store the result h3 element under the board
@@ -67,10 +70,24 @@ let matchResults = document.querySelector(".match-results")
 let score1 = document.querySelector(".score1")
 let score2 = document.querySelector(".score2")
 
+// AI switch variable and it's event listener
+let switch1 = document.querySelector("#switch1")
+switch1.addEventListener("click", ()=>{pvp = false})
+
+// Filtered array with free board spaces
+let filteredArr = []
+
 ////////////////////////////////////////////
 // Game functionality
 ////////////////////////////////////////////
 // Sets up the game, changes the grid
+
+// Function to check if PVP or PVE
+const pvpCheck = () => {
+    if (pvp === false && matchOver === false) {
+        computerMove()
+    }
+}
 
 // Function for changing the turnIndicator div in the html to the current player's value.
 const turnSetter = (currentTurn) => {
@@ -80,6 +97,7 @@ const turnSetter = (currentTurn) => {
     } else if (currentTurn === -1) {
         turnIndicator.classList.remove("cellX")
         turnIndicator.classList.add("cellO")
+        pvpCheck()
     }
 }
 
@@ -96,27 +114,29 @@ scoreSetter()
 
 // Random number generator that takes a parameter to set max number
 const randomNumberGen = (max) => {
-    let ranNum = Math.floor(Math.random() * (max + 1))
+    let ranNum = Math.floor(Math.random() * max)
     return ranNum
 }
 
-// Filtered arr with empty board spaces
-let filteredArr = []
-
 // Function to populate filteredArr with free spaces from cells arr
 const filterArray = () => {
-    // console.log(cellsArr);
     filteredArr = []
     // Iterate over cellsArr
     for (let i = 0; i < cellsArr.length; i++) {
-        if (cellsArr[i].className !== " cellX" && cellsArr[i].className !== " cellO") {
-            console.log(cellsArr[i].className);
+        if (cellsArr[i].className !== "cellX" && cellsArr[i].className !== "cellO") {
             filteredArr.push(i)
         }
     }
     console.log(filteredArr);
 }
 
+// Function for computer to select a random index from filteredArr
+const computerMove = () => {
+    filterArray()
+    let compChoice = filteredArr[randomNumberGen(filteredArr.length)]
+    console.log(compChoice)
+    placeCell(compChoice)
+}
 
 // Function for placing cells, input parameter is the grid index from the eventListener
 const placeCell = (index) => {
@@ -124,10 +144,10 @@ const placeCell = (index) => {
     let row = (index - col) / 3
     if (boardArr[row][col] === 0 && matchOver === false) {
         boardArr[row][col] = turn
-        turn *= -1
-        turnSetter(turn)
         drawCells()
         checkWin()
+        turn *= -1
+        turnSetter(turn)
     } else if (matchOver === true) {
         console.log("Match is over!");
     } else {
@@ -243,8 +263,6 @@ const checkWin = () => {
     // If the result is a draw (0) it sends that as a parameter to the finishMatch callback
     } else if (drawCheck() == true) {
         finishMatch(0)
-    } else {
-        filterArray()
     }
 }
 
@@ -275,11 +293,31 @@ const finishMatch = (result) => {
     }
     // Calls the displayResult function and passes the outcome variable as a parameter.
     displayResult(outcome)
+    nextMatchVisible()
 }
 
 // Function to add the outcome from finishMatch to the h3 text under the board.
 const displayResult = (outcome) => {
     matchResults.innerText = outcome
+}
+
+// Makes nextmatchButton visible and adds eventListener
+const nextMatchVisible = () => {
+    nextMatchBtn = document.createElement("button")
+    bottomRightDiv = document.querySelector(".bottom-right")
+    nextMatchBtn.innerText = "Next Match"
+    nextMatchBtn.classList.add("nextmatch-button")
+    bottomRightDiv.appendChild(nextMatchBtn)
+    nextMatchBtn.addEventListener("click", ()=>{nextMatch()})
+}
+
+// Makes next match button invisible
+const nextMatchRemove = () => {
+    bottomRightDiv = document.querySelector(".bottom-right")
+    if (bottomRightDiv.hasChildNodes()) {
+        nextMatchBtn = document.querySelector(".nextmatch-button")
+        bottomRightDiv.removeChild(nextMatchBtn)
+    }
 }
 
 // Function to restart game if restart button is clicked
@@ -295,10 +333,33 @@ const restartGame = () => {
         cell.classList.remove("cellO")
     })
     matchOver = false
+    player1.score = 0
+    player2.score = 0
     turn = 1
     turnSetter(turn)
     matchResults.innerText = ""
     scoreSetter()
+    nextMatchRemove()
+
+}
+
+// Function to restart game if restart button is clicked
+const nextMatch = () => {
+    boardArr = [
+        [0, 0, 0],
+        [0, 0, 0],
+        [0, 0, 0]
+    ]
+    cellsArr.forEach(cell => {
+        cell.classList.remove("cellX")
+        cell.classList.remove("cellO")
+    })
+    matchOver = false
+    turn = 1
+    turnSetter(turn)
+    matchResults.innerText = ""
+    scoreSetter()
+    nextMatchRemove()
 }
 
 //
