@@ -26,7 +26,7 @@ const setupBoard5 = () => {
     let rightPanel = document.querySelector(".right")
     let board = document.createElement("div")
     board.classList.add("board-5x5")
-    for (i = 0; i <= (boardSize * boardSize); i++) {
+    for (i = 0; i < (boardSize * boardSize); i++) {
         let cell = document.createElement("div")
         cell.setAttribute("id", "cell")
         board.appendChild(cell)

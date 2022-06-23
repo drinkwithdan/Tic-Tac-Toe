@@ -30,6 +30,7 @@ const player2 = new Player ("Player 2")
 // Sounds
 const scribbleSound1 = new Audio("./sounds/scribble1.wav")
 const scribbleSound2 = new Audio("./sounds/scribble2.wav")
+const eraserSound = new Audio("./sounds/eraser.wav")
 const hmmSound = new Audio("./sounds/Hmm.wav")
 const ahhSound1 = new Audio("./sounds/Ahh1.wav")
 const ahhSound2 = new Audio("./sounds/Ahh2.wav")
@@ -64,6 +65,7 @@ restartButton.addEventListener("click", () => {restartGame()})
 
 btn3x3.addEventListener("click", ()=>{
     // console.log("3x3 clicked")
+    eraserSound.play()
     cleanBoard()
     setupBoard3()
     
@@ -71,6 +73,7 @@ btn3x3.addEventListener("click", ()=>{
 
 btn5x5.addEventListener("click", ()=>{
     // console.log("5x5 clicked")
+    eraserSound.play()
     cleanBoard()
     setupBoard5()
     

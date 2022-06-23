@@ -35,7 +35,7 @@ A game of luck, strength and skill. The every person's Chess.
   <img src="./img/drawnO.png" width="100" /> 
 </p> 
 
- The board and token elements are generated in JS and then appended into the board area on startup or when switching boards. The board is set as a grid within the other external elements, which are set as a `flexbox`. The remaining backgrounds and styling elements are free-to-use photos and clipart.
+ The board and token elements are generated in JS and then appended into the board area on startup or when switching boards. The board is set as a grid within the other external elements, which are set as a `flexbox`. The remaining backgrounds and styling elements are free-to-use photos and clipart. The idea was to lean towards a ![skeuomorphic]("https://en.wikipedia.org/wiki/Skeuomorph") aesthetic- emulating a real desk and pad.
 
  A simple animation is on the switch, as well as the grid-swap effect when changing board sizes.
 
@@ -62,9 +62,13 @@ I decided to add some sound effects to make the game a little more amusing to pl
 
  Also the option to select a "night mode" with different styling would be amazing.
 
- Additional grid sizes would be fun as well, but from experimentation the round length increases and possibility of a win tends to decrease - the higher the grid size.
+ Additional grid sizes would be fun as well, but from experimentation the round length increases and possibility of a win tends to decrease - the higher the grid size - detracting from a quick, fun game experience.
 
  A more robust AI would be great, something that acts based on best moves - rather than randomly.
+
+ I had considered the possibility of having multiple hand-drawn Xs and Os - and using a random number generator to select them before deploying to the board - creating a more realistic look.
+ 
+ The option to input the user (and AI) name would be good, as well as customisable or selectable tokens.
 
  # How to use
  Run the game from the `index.html` file - or play the game on [Github](https://drinkwithdan.github.io/Tic-Tac-Toe/)
