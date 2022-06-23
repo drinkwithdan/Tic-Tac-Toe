@@ -35,7 +35,7 @@ const setupBoard5 = () => {
     cellsArr = document.querySelectorAll("#cell")
     cellsArr.forEach((cell, index) => {
         cell.addEventListener("click", () => {
-            console.log("clicked");
+            scribbleSound1.play()
             placeCell5(index)
         })
     })

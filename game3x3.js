@@ -34,7 +34,7 @@ const setupBoard3 = () => {
     cellsArr = document.querySelectorAll("#cell")
     cellsArr.forEach((cell, index) => {
         cell.addEventListener("click", () => {
-            console.log("clicked");
+            scribbleSound1.play()
             placeCell(index)
         })
     })
@@ -50,7 +50,7 @@ let boardArr = [
 // Function to check if PVP or PVE
 const pvpCheck = () => {
     if (pvp === false && matchOver === false) {
-        computerMove()
+       computerMove()  
     }
 }
 
@@ -107,6 +107,7 @@ const placeCell = (index) => {
         checkWin()
         turn *= -1
         turnSetter(turn)
+        // scribbleSound1.play()
     } else if (matchOver === true) {
         console.log("Match is over!");
     } else {
@@ -237,16 +238,19 @@ const finishMatch = (result) => {
         player1.setWinner(true)
         player1.score++
         matchOver = true
+        ahhSound1.play()
     // Else, if the outcome of -1, set Player 2 as the winner
     } else if (result === -1) {
         outcome = `${player2.name} is the winner!`
         player2.setWinner(true)
         player2.score++
         matchOver = true
+        ahhSound2.play()
     // Else, if there is a draw
     } else if (result === 0) {
         outcome = `The match was a draw!`
         matchOver = true
+        hmmSound.play()
     }
     // Calls the displayResult function and passes the outcome variable as a parameter.
     displayResult(outcome)
@@ -266,6 +270,7 @@ const nextMatchVisible = () => {
     nextMatchBtn.classList.add("nextmatch-button")
     bottomRightDiv.appendChild(nextMatchBtn)
     nextMatchBtn.addEventListener("click", ()=>{nextMatch()})
+    nextMatchBtn.style.fontFamily = "'Gloria Hallelujah', cursive;"
 }
 
 // Makes next match button invisible
