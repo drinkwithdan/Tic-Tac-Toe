@@ -64,14 +64,16 @@ restartButton.addEventListener("click", () => {restartGame()})
 
 btn3x3.addEventListener("click", ()=>{
     console.log("3x3 clicked")
-    cleanBoard();
+    cleanBoard()
     setupBoard3()
+    
 })
 
 btn5x5.addEventListener("click", ()=>{
     console.log("5x5 clicked")
-    cleanBoard();
+    cleanBoard()
     setupBoard5()
+    
 })
 
 // Creates variable to store the result h3 element under the board

@@ -13,18 +13,21 @@ body {
 }
 
 h1 {
-    font-size: 60px;
-    font-family: 'Amatic SC', sans-serif;
+    font-size: 40px;
+    font-family: 'Gloria Hallelujah', cursive;
     text-align: center;
+    margin: 5px;
 }
 
 h3 {
+    font-family: 'Gloria Hallelujah', cursive;
     font-size: 20px;
     text-align: center;
     margin: 0;
 }
 
 h4 {
+    font-family: 'Gloria Hallelujah', cursive;
     font-size: 15px;
     margin: 0;
 }
@@ -37,7 +40,20 @@ main {
     justify-content: center;
     flex-wrap: wrap;
     background-color: lightgrey;
+    border-radius: 5px;
 } 
+
+
+/* @keyframes remove-animate {
+    from {
+        transform: scale(1);
+        opacity: 1;
+    }
+    to {
+        transform: scale(0);
+        opacity: 0;
+    }
+} */
 
 @keyframes append-animate {
     from {
@@ -49,21 +65,13 @@ main {
         opacity: 1;
     }
 }
-/* 
-@keyframes remove-animate {
-    from {
-        transform: scale(1);
-        opacity: 1;
-    }
-    to {
-        transform: scale(0);
-        opacity: 0;
-    }
-} */
+
 
 .board-3x3 {
-    animation: append-animate .3s linear;
-    /* animation: remove-animate .3s linear; */
+    animation: append-animate 0.3s;
+    /* animation: remove-animate, append-animate;
+    animation-duration: 0.5s, 0.5s;
+    animation-delay: 0s, 0.5s; */
     width: 300px;
     height: 300px;
     display: grid;
@@ -79,8 +87,10 @@ main {
 }
 
 .board-5x5 {
-    animation: append-animate .3s linear;
-    /* animation: remove-animate .3s linear; */
+    animation: append-animate 0.3s;
+    /* animation: remove-animate, append-animate;
+    animation-duration: 0.5s, 0.5s;
+    animation-delay: 0s, 0.5s; */
     width: 300px;
     height: 300px;
     display: grid;
@@ -94,8 +104,6 @@ main {
     outline-offset: -6px;
     /* gap: 8px; */
 }
-
-
 
 #cell {
     border: 2px solid black;
@@ -137,6 +145,7 @@ main {
     width: 600px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .left {
@@ -151,6 +160,7 @@ main {
 }
 
 .btn-3x3 {
+    font-family: 'Gloria Hallelujah', cursive;
     height: 30px;
     border: none;
     margin: 5px;
@@ -165,6 +175,7 @@ main {
 }
 
 .btn-5x5 {
+    font-family: 'Gloria Hallelujah', cursive;
     height: 30px;
     border: none;
     margin: 5px;
@@ -186,10 +197,11 @@ main {
 }
 
 .restart-button {
+    font-family: 'Gloria Hallelujah', cursive;
+    font-size: 10px;
     width: 75px;
-    height: 50px;
+    height: 60px;
     border: none;
-    font-family: Helvetica, sans-serif;
     background-color: black;
     color: white;
     font-size: 15px;
@@ -212,8 +224,9 @@ main {
 }
 
 .nextmatch-button {
+    font-family: 'Gloria Hallelujah', cursive;
     width: 75px;
-    height: 50px;
+    height: 60px;
     border: none;
     font-family: Helvetica, sans-serif;
     background-color: black;
