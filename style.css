@@ -3,6 +3,10 @@
 }
 
 body {
+    background-image: url("./img/background3.avif");
+    background-position: center;
+    background-size:auto auto;
+    /* background-repeat: no-repeat; */
     width: 90%;
     margin: auto;
     display: flex;
@@ -12,11 +16,17 @@ body {
     font-family: helvetica, sans-serif;
 }
 
+header img {
+    width: 500px;
+    margin: 10px 0px;
+}
+
 h1 {
     font-size: 40px;
     font-family: 'Gloria Hallelujah', cursive;
     text-align: center;
     margin: 5px;
+    color: white;
 }
 
 h3 {
@@ -40,6 +50,8 @@ main {
     justify-content: center;
     flex-wrap: wrap;
     background-color: lightgrey;
+    background-image: url("./img/notepadBackground.jpeg");
+    background-size: cover;
     border-radius: 5px;
 } 
 
@@ -77,12 +89,14 @@ main {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
-    /* background-image: url(./img/grid.png); */
+    background-image: url(./img/drawnChiffy.png);
     background-size: cover;
-    outline-width: 6px;
+    
+    /* background-size: cover;
+    outline-width: 10px;
     outline-style: solid;
-    outline-color: lightgrey;
-    outline-offset: -6px;
+    outline-color: rgba(0, 0, 0, 0);
+    outline-offset: 10px; */
     /* gap: 8px; */
 }
 
@@ -96,17 +110,17 @@ main {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(5, 1fr);
-    /* background-image: url(./img/grid.png); */
+    background-image: url(./img/drawnBackground2.png);
     background-size: cover;
-    outline-width: 6px;
+    /* outline-width: 6px;
     outline-style: solid;
-    outline-color: lightgrey;
-    outline-offset: -6px;
+    outline-color: rgba(0, 0, 0, 0);
+    outline-offset: -6px; */
     /* gap: 8px; */
 }
 
 #cell {
-    border: 2px solid black;
+    /* border: 2px solid black; */
 }
 
 .top-panel {
@@ -130,7 +144,8 @@ main {
 .topright {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items:center;
+    justify-content: space-between;
     width: 100px;
     height: 75px;
     text-align: center;
@@ -242,7 +257,7 @@ main {
 
 /* X markers on the board and turn indicator */
  .cellX {
-     background-image: url(./img/x.png);
+     background-image: url(./img/drawnX.png);
      background-size: 80%;
      background-position: center;
      background-repeat: no-repeat;
@@ -250,7 +265,7 @@ main {
 
  /* O markers on the board and turn indicator */
  .cellO {
-    background-image: url(./img/o.png);
+    background-image: url(./img/drawnO.png);
     background-size: 80%;
     background-position: center;
     background-repeat: no-repeat;
@@ -317,6 +332,17 @@ main {
   
   .slider.round:before {
     border-radius: 50%;
+  }
+
+  footer {
+      height: 50px;
+  }
+
+  footer a{
+      margin: 20px 0px;
+      font-family: 'Gloria Hallelujah', cursive;
+      text-decoration: none;
+      color: black;
   }
 
   @media (max-width: 350px) {
