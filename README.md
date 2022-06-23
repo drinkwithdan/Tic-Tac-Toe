@@ -30,7 +30,12 @@ A game of luck, strength and skill. The every person's Chess.
  ## CSS
  A simple, playful approach was taken with the styling. Too many different elements or options on the screen would detract from usability. The hand-drawn grids, tokens and header are all `.png` files created by my wife. It adds a nice casual feel.
 
- The board and token elements are generated in JS and then appended into the board area on startup or when switching boards. The board is set as a grid within the other external elements, which are set as a `flexbox`.
+<p align="middle">
+  <img src="./img/drawnX.png" width="100" />   
+  <img src="./img/drawnO.png" width="100" /> 
+</p> 
+
+ The board and token elements are generated in JS and then appended into the board area on startup or when switching boards. The board is set as a grid within the other external elements, which are set as a `flexbox`. The remaining backgrounds and styling elements are free-to-use photos and clipart.
 
  A simple animation is on the switch, as well as the grid-swap effect when changing board sizes.
 
@@ -43,18 +48,23 @@ The main `script.js` file contains the global variables and `eventListeners` tha
 
 Separate files contain the `3x3game` and `5x5game` options, which offer 2 different grid sizes selected by button from the board. If I were to re-write the code I would have contained the 2 board sizes within the same file and functions- allowing easier scalability and additional sizes quite easily. There is unfortunately a fair bit of redundancy across the 2 files - but I wanted to ensure the code worked on a limited time frame so built out and debugged a second option separately.
 
-The various `functions` of the app allow the user to:
+The various `functions {}` of the app allow the user to:
  - Add tokens
  - Change game options
  - Restart the game from scratch, or a new round
  - Check for win, loss and draw end conditions - and end the game appropriately.
 
-# Future functionality.
+I decided to add some sound effects to make the game a little more amusing to play, these were sourced from ![Freesound.org]("www.freesound.org") or recorded by myself with my Macbook microphone. The simplicity of using sounds in Javascript made it hard to refuse.
+
+
+# Future functionality
  Given more time I would have set a match limit (perhaps of 5 matches) to add a final goal to multiple rounds.
 
  Also the option to select a "night mode" with different styling would be amazing.
 
  Additional grid sizes would be fun as well, but from experimentation the round length increases and possibility of a win tends to decrease - the higher the grid size.
+
+ A more robust AI would be great, something that acts based on best moves - rather than randomly.
 
  # How to use
  Run the game from the `index.html` file - or play the game on [Github](https://drinkwithdan.github.io/Tic-Tac-Toe/)
