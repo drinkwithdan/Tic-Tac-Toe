@@ -39,7 +39,31 @@ main {
     background-color: lightgrey;
 } 
 
-.board {
+@keyframes append-animate {
+    from {
+        transform: scale(0);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+/* 
+@keyframes remove-animate {
+    from {
+        transform: scale(1);
+        opacity: 1;
+    }
+    to {
+        transform: scale(0);
+        opacity: 0;
+    }
+} */
+
+.board-3x3 {
+    animation: append-animate .3s linear;
+    /* animation: remove-animate .3s linear; */
     width: 300px;
     height: 300px;
     display: grid;
@@ -47,15 +71,34 @@ main {
     grid-template-rows: repeat(3, 1fr);
     /* background-image: url(./img/grid.png); */
     background-size: cover;
-    outline-width: 5px;
+    outline-width: 6px;
     outline-style: solid;
     outline-color: lightgrey;
-    outline-offset: -5px;
+    outline-offset: -6px;
     /* gap: 8px; */
 }
 
+.board-5x5 {
+    animation: append-animate .3s linear;
+    /* animation: remove-animate .3s linear; */
+    width: 300px;
+    height: 300px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    /* background-image: url(./img/grid.png); */
+    background-size: cover;
+    outline-width: 6px;
+    outline-style: solid;
+    outline-color: lightgrey;
+    outline-offset: -6px;
+    /* gap: 8px; */
+}
+
+
+
 #cell {
-    border: 3px solid black;
+    border: 2px solid black;
 }
 
 .top-panel {
@@ -89,6 +132,52 @@ main {
     width: 50px;
     height: 50px;
 }
+
+.middle-panel {
+    width: 600px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.left {
+    width: 75px;
+    height: 75px;
+
+}
+
+.right{
+    width: 75px;
+    height: 75px;
+}
+
+.btn-3x3 {
+    height: 30px;
+    border: none;
+    margin: 5px;
+    background-color: black;
+    color: white;
+    padding: 3px;
+}
+
+.btn-3x3:hover {
+    background-color: white;
+    color: black;
+}
+
+.btn-5x5 {
+    height: 30px;
+    border: none;
+    margin: 5px;
+    background-color: black;
+    color: white;
+    padding: 3px;
+}
+
+.btn-5x5:hover {
+    background-color: white;
+    color: black;
+}
+
 .bottom-panel {
     height: 50px;
     width: 100%;
@@ -215,6 +304,30 @@ main {
   
   .slider.round:before {
     border-radius: 50%;
+  }
+
+  @media (max-width: 350px) {
+      body {
+          width: 90%;
+          font-size: 8px;
+      }
+      main {
+        width: 90%;
+      }
+      .board-3x3 {
+          width: 150px;
+          height: 150px;
+      }
+      .board-5x5 {
+          width: 150px;
+          width: 150px;
+      }
+      .top-panel {
+          width: 100%;
+      }
+      .middle-panel {
+          width: 100%;
+      }
   }
 
  /* ADDITIONAL CONTENT:
