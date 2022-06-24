@@ -56,7 +56,7 @@ The various `functions {}` of the app allow the user to:
  - Restart the game from scratch, or a new round
  - Check for win, loss and draw end conditions - and end the game appropriately.
 
-I decided to add some sound effects to make the game a little more amusing to play, these were sourced from ![Freesound.org]("https://www.freesound.org") or recorded by myself with my Macbook microphone. The simplicity of using sounds in Javascript made it hard to refuse.
+I decided to add some sound effects to make the game a little more amusing to play, these were sourced from [Freesound.org]("https://www.freesound.org") or recorded by myself with my Macbook microphone. The simplicity of using sounds in Javascript made it hard to refuse.
 
 
 # Future functionality
