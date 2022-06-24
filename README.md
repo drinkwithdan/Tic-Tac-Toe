@@ -8,9 +8,9 @@ A game of luck, strength and skill. The every person's Chess.
  - Javascript
 
  ## The Game
- Tic-Tac-Toe is a very approachable, easy game that people of all ages can Enjoy. I wanted to keep my version simple and comfortable, that any could get into straight away.
+ Tic-Tac-Toe is a very approachable, easy game that people of all ages can enjoy. I wanted to keep my version simple and comfortable, that anyone could get into straight away.
 
- I did some initial planning and drew up a wireframe of what I imagine the game process being. 
+ I did some initial planning and drew up a wireframe of what I imagined the game process being. 
  
  ![Wireframe](./img/Wireframe.png)
  
@@ -18,9 +18,11 @@ A game of luck, strength and skill. The every person's Chess.
 
  I decided to make a Minimal Viable Product first, and then build functionality into the app later - rather than try and add scalability from the beginning.
 
+ In retrospect, I would have saved a lot of lines of code and time if I had built in scaleability from the start.
+
  # Elements
  ## Files
- The app is across an `index.html` file, a `style.css` file and 3 `.js` files. Once to manage the script and initialisation and two to contain the 2 different game modes; 3x3 and 5x5.
+ The app is across an `index.html` file, a `style.css` file and 3 x `.js` files. One to manage the script and initialisation and two to contain the 2 different game modes; 3x3 and 5x5.
 
 ## HTML
  I chose to keep the grid setup clean and simple, with the board element being generated as a `grid` within the .css styling. The only HTML elements that are visible on startup are the buttons and switches.
@@ -28,18 +30,18 @@ A game of luck, strength and skill. The every person's Chess.
  The central portion of the `main` div is the board, which allows the user to focus on the game easily.
 
  ## CSS
- A simple, playful approach was taken with the styling. Too many different elements or options on the screen would detract from usability. The hand-drawn grids, tokens and header are all `.png` files created by my wife. It adds a nice casual feel.
+ A simple, playful approach was taken with the styling. Too many different elements or options on the screen would detract from usability. The hand-drawn grids, tokens and header are all `.png` files created by my [wife](https://www.instagram.com/hmcd.jpg/?hl=en). It adds a nice casual feel.
 
 <p align="middle">
   <img src="./img/drawnX.png" width="100" />   
   <img src="./img/drawnO.png" width="100" /> 
 </p> 
 
- The board and token elements are generated in JS and then appended into the board area on startup or when switching boards. The board is set as a grid within the other external elements, which are set as a `flexbox`. The remaining backgrounds and styling elements are free-to-use photos and clipart. The idea was to lean towards a ![skeuomorphic]("https://en.wikipedia.org/wiki/Skeuomorph") aesthetic- emulating a real desk and pad.
+ The board and token elements are generated in JS and then appended into the board area on startup or when switching boards. The board is set as a grid within the other external elements, which are set as a `flexbox`. The remaining backgrounds and styling elements are free-to-use photos and clipart. The idea was to lean towards a [skeuomorphic](https://en.wikipedia.org/wiki/Skeuomorph) aesthetic- emulating a real desk and pad.
 
  A simple animation is on the switch, as well as the grid-swap effect when changing board sizes.
 
- Buttons are large and function, with a `hover` colour reverse to aid with usability.
+ Buttons are large and function with a `hover` colour reverse to aid with usability.
 
 ## JavaScript
 The main functionality of the game is in Javascript, which creates the game boards, as well as populating the cells and tokens within.
