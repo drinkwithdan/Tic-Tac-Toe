@@ -70,6 +70,8 @@ I decided to add some sound effects to make the game a little more amusing to pl
  
  The option to input the user (and AI) name would be good, as well as customisable or selectable tokens.
 
+ I would like the game to be just symbols, with no language - so it would be accessible to anyone. For example the grid buttons would be the grid's themselves, the AI switch would be a tiny robot and the scores would have the token with a number of scratches next to them rather than numbers.
+
  # How to use
  Run the game from the `index.html` file - or play the game on [Github](https://drinkwithdan.github.io/Tic-Tac-Toe/)
 
