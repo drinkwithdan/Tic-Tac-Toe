@@ -113,11 +113,14 @@ main {
     grid-template-rows: repeat(5, 1fr);
     background-image: url(./img/drawnBackground2.png);
     background-size: cover;
-    /* outline-width: 6px;
-    outline-style: solid;
-    outline-color: rgba(0, 0, 0, 0);
-    outline-offset: -6px; */
-    /* gap: 8px; */
+}
+
+.board-3x3:hover {
+    cursor: pointer;
+}
+
+.board-5x5:hover {
+    cursor: pointer;
 }
 
 #cell {
