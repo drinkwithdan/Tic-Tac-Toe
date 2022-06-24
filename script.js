@@ -34,6 +34,7 @@ const eraserSound = new Audio("./sounds/eraser.wav")
 const hmmSound = new Audio("./sounds/Hmm.wav")
 const ahhSound1 = new Audio("./sounds/Ahh1.wav")
 const ahhSound2 = new Audio("./sounds/Ahh2.wav")
+const nopeSound = new Audio("./sounds/nope1.wav")
 const aiSound1 = new Audio("./sounds/AI1.wav")
 const aiSound2 = new Audio("./sounds/AI2.wav")
 

@@ -6,9 +6,9 @@ body {
     background-image: url("./img/background3.avif");
     background-position: center;
     background-size:auto auto;
-    /* background-repeat: no-repeat; */
     width: 90%;
-    margin: 0 auto;
+    height: 100%;
+    margin: auto auto;
     display: flex;
     flex-direction: column;
     justify-content: center;

@@ -34,7 +34,7 @@ const setupBoard3 = () => {
     cellsArr = document.querySelectorAll("#cell")
     cellsArr.forEach((cell, index) => {
         cell.addEventListener("click", () => {
-            scribbleSound1.play()
+            // scribbleSound1.play()
             placeCell(index)
         })
     })
@@ -107,11 +107,11 @@ const placeCell = (index) => {
         checkWin()
         turn *= -1
         turnSetter(turn)
-        // scribbleSound1.play()
+        scribbleSound1.play()
     } else if (matchOver === true) {
-        console.log("Match is over!");
+        // console.log("Match is over!");
     } else {
-    (console.log("Cell is taken already!"))
+    nopeSound.play()
     }
 }
 
